@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
 // Define a struct to represent a color with red, green, and blue components
@@ -12,6 +13,9 @@ struct Color {
     int green;
     int blue;
 };
+
+// Define a constant for the width of the output columns
+const int width = 10;
 
 int main() {
     // Seed the random number generator
@@ -36,11 +40,24 @@ int main() {
         colors.push_back(temp);
     }
 
-    // Print the RGB values of each Color object in the vector
+    // Print the header for the table
+    cout << right << setw(width) << "Color#"
+         << right << setw(width) << "R Value" 
+         << right << setw(width) << "G Value" 
+         << right << setw(width) << "B Value" << endl;
+
+    // Print a line of dashes to separate the header from the data
+    cout << right << setw(width) << "------"
+         << right << setw(width) << "-------" 
+         << right << setw(width) << "-------" 
+         << right << setw(width) << "-------" << endl;
+
+    // Print the color data in a formatted table
     for (int i = 0; i < colors.size(); i++) {
-        cout << colors[i].red << " " 
-             << colors[i].green << " " 
-             << colors[i].blue << endl;
+        cout << right << setw(width) << i + 1
+             << right << setw(width) << colors[i].red
+             << right << setw(width) << colors[i].green
+             << right << setw(width) << colors[i].blue << endl;
     }
 
     return 0;
