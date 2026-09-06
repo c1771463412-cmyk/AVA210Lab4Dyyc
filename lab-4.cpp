@@ -2,7 +2,8 @@
 
 #include <iostream>
 #include <vector>
-#include <random>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 // Define a struct to represent a color with red, green, and blue components
@@ -31,13 +32,16 @@ int main() {
         temp.green = rand() % 256;
         temp.blue = rand() % 256;
 
-        colors.push_back(temp); // Add the generated Color object to the colors vector
+        // Add Color to the vector
+        colors.push_back(temp);
     }
 
-    // Output the values of the color components to the console
-    cout << colors[0].red << " " 
-         << colors[0].green << " " 
-         << colors[0].blue << endl;
+    // Print the RGB values of each Color object in the vector
+    for (int i = 0; i < colors.size(); i++) {
+        cout << colors[i].red << " " 
+             << colors[i].green << " " 
+             << colors[i].blue << endl;
+    }
 
     return 0;
 }
