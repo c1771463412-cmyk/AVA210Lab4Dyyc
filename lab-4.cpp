@@ -14,6 +14,9 @@ struct Color {
     int blue;
 };
 
+// Define a constant for the maximum value of a color component
+const int number = 256;
+
 // Define a constant for the width of the output columns
 const int width = 10;
 
@@ -32,9 +35,9 @@ int main() {
         Color temp;
 
         // Generate random values for the red, green, and blue
-        temp.red = rand() % 256;
-        temp.green = rand() % 256;
-        temp.blue = rand() % 256;
+        temp.red = rand() % number;
+        temp.green = rand() % number;
+        temp.blue = rand() % number;
 
         // Add Color to the vector
         colors.push_back(temp);
