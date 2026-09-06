@@ -13,14 +13,26 @@ struct Color {
 };
 
 int main() {
-    // Create a vector to hold Color objects
+    // Seed the random number generator
+    srand(time(0));
+
+    // Generate a random number between [25, 50]
+    int n = rand() % 26 + 25;
+
+    // Create an empty vector to hold Color objects
     vector<Color> colors;
 
-    // Create an instance of the Color struct and initialize it with specific values
-    Color testColor = {255, 155, 55};
+    // Generate n random Color objects
+    for (int i = 0; i < n; i++) {
+        Color temp;
 
-    // Add the testColor instance to the colors vector
-    colors.push_back(testColor);
+        // Generate random values for the red, green, and blue
+        temp.red = rand() % 256;
+        temp.green = rand() % 256;
+        temp.blue = rand() % 256;
+
+        colors.push_back(temp); // Add the generated Color object to the colors vector
+    }
 
     // Output the values of the color components to the console
     cout << colors[0].red << " " 
