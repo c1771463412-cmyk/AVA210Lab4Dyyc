@@ -1,6 +1,7 @@
 // COMSC-210-5293 | Lab 4 | Yuyi Chen
 
 #include <iostream>
+#include <vector>
 #include <random>
 using namespace std;
 
@@ -11,14 +12,20 @@ struct Color {
     int blue;
 };
 
-main() {
+int main() {
+    // Create a vector to hold Color objects
+    vector<Color> colors;
+
     // Create an instance of the Color struct and initialize it with specific values
     Color testColor = {255, 155, 55};
 
+    // Add the testColor instance to the colors vector
+    colors.push_back(testColor);
+
     // Output the values of the color components to the console
-    cout << testColor.red << " " 
-         << testColor.green << " " 
-         << testColor.blue << endl;
+    cout << colors[0].red << " " 
+         << colors[0].green << " " 
+         << colors[0].blue << endl;
 
     return 0;
 }
